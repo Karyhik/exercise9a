@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+
+    <body>
+        <p class="js-virat"></p>
+        <p>
+            <button
+            onclick="bodmasRule(1);">
+                1
+            </button>
+            <button
+            onclick="bodmasRule(2);">
+                2
+            </button>
+            <button
+            onclick="bodmasRule(3);">
+                3
+            </button>
+            <button onclick="bodmasRule('+');">
+                +
+            </button>
+        </p>
+
+        <p>
+            <button
+            onclick="bodmasRule(4);">
+                4
+            </button>
+            <button
+            onclick="bodmasRule(5);">
+                5
+            </button>
+            <button
+            onclick="bodmasRule(6);">
+                6
+            </button>
+            <button
+            onclick="bodmasRule('-');">
+                -
+            </button>
+        </p>
+        <p>
+            <button
+            onclick="bodmasRule(7);">
+                7
+            </button>
+            <button
+            onclick="bodmasRule(8);">
+                8
+            </button>
+            <button
+            onclick="bodmasRule(9);">
+                9
+            </button>
+            <button
+            onclick="bodmasRule('*');">
+                *
+            </button>
+        </p>
+       
+       <p>
+        <button
+        onclick="bodmasRule('0');">
+            0
+        </button>
+        <button
+        onclick="bodmasRule('.');">
+            .
+        </button>
+        <button
+        onclick="cartQuantity =eval(cartQuantity);
+        displayCart();
+        localStorage.setItem('cartQuantity',cartQuantity);">
+            =
+        </button>
+        <button
+        onclick="bodmasRule('/');">
+            /
+        </button>
+       </p>
+     
+       <p>
+        <button
+        onclick="cartQuantity='';
+        displayCart();
+        localStorage.setItem('cartQuantity',cartQuantity);">
+            Clear
+        </button>
+       </p>
+        
+        <script>
+            let cartQuantity=localStorage.getItem('cartQuantity')||'';
+            displayCart();
+            function bodmasRule(change)
+            {
+                cartQuantity+=change;
+                displayCart();
+                localStorage.setItem('cartQuantity',cartQuantity);
+            }
+            function displayCart()
+            {
+                document.querySelector('.js-virat').innerHTML=cartQuantity;
+            }
+        </script>
+    </body>
+</html>

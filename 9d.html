@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+
+    <body>
+        <input placeholder="Name" class="js-kulu"
+        onkeydown="if(event.key ==='Enter')
+        {
+           greeter();  
+        }">
+        <button
+        onclick="greeter();">
+            Submit
+        </button>
+        <p class="js-kul"></p>
+        <script>
+            function greeter()
+            {
+                const inputElement=document.querySelector('.js-kulu');
+                document.querySelector('.js-kul').innerHTML=`Your Name is:${inputElement.value}`;
+            }
+
+        </script>
+
+    </body>
+</html>
